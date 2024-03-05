@@ -25,7 +25,7 @@
     </mat-chip-set>
 
     <mat-card-actions>
-      <button mat-raised-button color="primary">
+      <button mat-raised-button color="primary" ( like )="likeUser">
         {{ postData.likeCount }}
       </button>
       <mat-icon>favorite</mat-icon>
@@ -35,4 +35,36 @@
       <mat-icon>remove_red_eye</mat-icon>
     </mat-card-actions>
   </mat-card>
+
+  <mat-card class="comment-card">
+      <mat-card-content>
+        <h4>Publié votre Commentaire </h4>
+        <div>
+          <form [formGroup]="commentForm">
+             <mat-form-field appearance="fill">
+              <mat-label>Content</mat-label>
+              <textarea matInput formControlName="content"></textarea>
+
+             </mat-form-field>
+             <mat-form-field appearance="fill">
+               <mat-label>Posted By</mat-label>
+               <input matInput formControlName="postedBy">
+             </mat-form-field>
+
+             <button mat-raised-button (click)="publishComment()" color="primary" style="float: right;" [disabled]="!commentForm.valid">Publié votre Commentaire</button>
+          </form>
+        </div>
+      </mat-card-content>
+  </mat-card>
+
+  <div style="margin-top: 10px">
+    <h4>Comments</h4>
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>{{comments.postedBy }}</mat-card-title>
+      <mat-card-subtitle>{{comments.createdAt | date: 'medium} }</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>{{comments.content}}</mat-card-content>
+
+  </div>
 </div>

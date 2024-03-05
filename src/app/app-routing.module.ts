@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {CreatePostComponent} from "./pages/components/create-post/create-post.component";
+import {CreatePostComponent} from "./pages/create-post/create-post.component";
 import { ViewAllComponent } from './pages/view-all/view-all.component';
 import { ViewUserComponent } from './pages/view-user/view-user.component';
 

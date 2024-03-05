@@ -8,7 +8,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {AngularMaterialModule} from "./AngularMaterialModule";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
-import { CreatePostComponent } from './pages/components/create-post/create-post.component';
+import { CreatePostComponent } from './pages/create-post/create-post.component';
 import {MatCard, MatCardContent, MatCardModule} from "@angular/material/card";
 import { MatSlideToggle, MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatIconModule } from '@angular/material/icon';
@@ -17,6 +17,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ViewUserComponent } from './pages/view-user/view-user.component';
+import {ViewAllComponent} from "./pages/view-all/view-all.component";
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { ViewUserComponent } from './pages/view-user/view-user.component';
     AppComponent,
     CreatePostComponent,
     ViewUserComponent,
-   
+    ViewAllComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -46,11 +48,11 @@ import { ViewUserComponent } from './pages/view-user/view-user.component';
 
 
   ],
-  
+
   providers: [
     provideClientHydration(),
     provideAnimationsAsync(),
-    
+
   ],
   bootstrap: [AppComponent],
   schemas: [ CUSTOM_ELEMENTS_SCHEMA ]

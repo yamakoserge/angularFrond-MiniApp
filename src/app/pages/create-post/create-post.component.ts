@@ -2,7 +2,8 @@ import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {Router} from "@angular/router";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import { PostService } from '../../../service/post.service';
+import {PostService} from "../../service/post.service";
+
 
 
 @Component({
@@ -38,7 +39,7 @@ export class CreatePostComponent {
   }
   remove(tag:any){
     const index = this.services.indexOf(tag);
-    if (index>0){
+    if (index>=0){
       this.services.splice(index,1);
     }
   }

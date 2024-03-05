@@ -10,6 +10,7 @@ const BASE_URL = "http://localhost:8090";
   providedIn: 'root'
 })
 export class PostService {
+  like: any;
 
   constructor(private http : HttpClient){}
 
@@ -23,5 +24,9 @@ export class PostService {
 
   getUserById(userId:number):Observable<any>{
     return this.http.get(BASE_URL + 'api/users/${userId}');
+  }
+
+  likeUser(userId:number):Observable<any>{
+    return this.http.put(BASE_URL + 'api/users/${userId}/like', {});
   }
 }

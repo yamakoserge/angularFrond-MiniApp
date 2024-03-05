@@ -1,6 +1,7 @@
-import { PostService } from './../../service/post.service';
+
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import {PostService} from "../../service/post.service";
 
 @Component({
   selector: 'app-view-all',
