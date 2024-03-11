@@ -1,0 +1,40 @@
+<div class="search-form">
+  <mat-form-field appearance="outline" class="search-input">
+    <mat-labet>Enter Keyword to search</mat-labet>
+    <input matInput [(ngModel)]="name" />
+
+    <button mat-button matSuffix color="primary" (click)="searchByName()">
+      <mat-icon>Search</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="empty" *ngIf="result.length == 0">
+  <mat-icon class="icon">no_sim</mat-icon>
+  <br />
+  <span>Nothing to see here</span>
+</div>
+<div class="card-container" *ngFor="let item of result">
+    <mat-card>
+        <mat-card-header>
+            <div mat-card-avatar class="exemple-header-image"></div>
+            <mat-card-title>{{item.name}}</mat-card-title>
+            <mat-card-subtile>Posted By : {{item.postedBy}} | Posted on :{{ item.date | date:'medium'}}</mat-card-subtile>
+        </mat-card-header>
+        <mat-grid-list col="5">
+            <mat-grid-title [colspan]="2" [rowspan]="1">
+                <img mat-card-image [src]="item.img" class="post-img" alt="Card Image">
+            </mat-grid-title>
+            <mat-card-content>
+                {{ item.content.length > 600 ? item.content.substr(0, 600) + '...' : item.content}}
+            </mat-card-content>
+        </mat-grid-list>
+    </mat-card>
+    <hr>
+    <mat-card-actions>
+        <button mat-raised-button color="primary">{{item.likeCount}}<mat-icon>favorite</mat-icon></button>
+        <button mat-raised-button color="primary" style="margin-left:  5px;">{{item.viewCount}}<mat-icon>removed_red_eye</mat-icon></button>
+        <button mat-raised-button color="primary" style="margin-left:  5px;" routerLink="/view-post/{{item.id}}">View User</button>
+    </mat-card-actions>
+    
+</div>

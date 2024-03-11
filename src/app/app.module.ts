@@ -18,6 +18,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ViewUserComponent } from './pages/view-user/view-user.component';
 import {ViewAllComponent} from "./pages/view-all/view-all.component";
+import { SearchByNameComponent } from './pages/search-by-name/search-by-name.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import {ViewAllComponent} from "./pages/view-all/view-all.component";
     CreatePostComponent,
     ViewUserComponent,
     ViewAllComponent,
+    SearchByNameComponent,
 
   ],
   imports: [

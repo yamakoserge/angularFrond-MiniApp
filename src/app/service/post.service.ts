@@ -29,4 +29,8 @@ export class PostService {
   likeUser(userId:number):Observable<any>{
     return this.http.put(BASE_URL + 'api/users/${userId}/like', {});
   }
+
+  searchByName(name:string):Observable<any>{
+    return this.http.get(BASE_URL + 'api/users/search${name}');
+  }
 }
