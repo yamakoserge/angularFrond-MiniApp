@@ -103,10 +103,10 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/dist/css/bootstrap.css","@angular/material/prebuilt-themes/indigo-pink.css",
+              "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.scss"
             ],
-            "scripts": ["node_modules/dist/js/bootstrap.js"]
+            "scripts": []
           }
         }
       }

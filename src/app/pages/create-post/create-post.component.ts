@@ -13,6 +13,7 @@ import {PostService} from "../../service/post.service";
 })
 export class CreatePostComponent {
 
+
   postForm!: FormGroup;
   services:string[] =[];
 
